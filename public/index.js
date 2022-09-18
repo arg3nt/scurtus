@@ -1,6 +1,4 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
-import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js';
-import { } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 import { getDatabase, ref, child, get } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
 
 
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	try {
 		let app = initializeApp(firebaseConfig);
-		let analytics = getAnalytics(app);
 		let dbRef = ref(getDatabase(app));
 		if (window.location.pathname != '/') {
 			get(child(dbRef, `links/${window.location.pathname}`)).then((snapshot) => {
